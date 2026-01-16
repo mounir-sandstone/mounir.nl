@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mounir Amlal - Reflection &amp; Sparring sandstone</title>
+<meta content="Portfolio of Mounir Amlal, Founder &amp; Director of sandstone. Expertise in strategy, technology, and growth." name="description"/>
+<link href="https://mounir.nl/en/" rel="canonical"/>
+<link href="https://mounir.nl/" hreflang="nl" rel="alternate"/>
+<link href="https://mounir.nl/en/" hreflang="en" rel="alternate"/>
+<link href="https://mounir.nl/" hreflang="x-default" rel="alternate"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1152d4",
+                        "background-light": "#ffffff",
+                        "background-subtle": "#f8f9fc",
+                        "background-dark": "#101622",
+                        "text-main": "#0d121b",
+                        "text-muted": "#4f5b6e",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                    animation: {
+                        'hero-title': 'fadeInUp 300ms ease-out forwards',
+                        'hero-subtitle': 'fadeInUp 300ms ease-out 100ms forwards',
+                        'hero-text': 'fadeInUp 300ms ease-out 200ms forwards',
+                        'hero-buttons': 'fadeIn 500ms ease-out 400ms forwards',
+                        'hero-image': 'scaleIn 800ms ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.98)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' },
+                        }
+                    },
+                    transitionDuration: {
+                        '120': '120ms',
+                        '160': '160ms',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            width: 2px;
+            background-color: #e5e7eb;
+            z-index: 0;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+             display: none;
+         }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        @keyframes revealOpacity {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes revealItem {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes borderPrimary {
+            to { border-color: #1152d4; }
+        }
+        @keyframes textPrimary {
+            to { color: #1152d4; }
+        }
+        .reveal-scroll-opacity, 
+        .reveal-scroll-item {
+            opacity: 1;
+        }
+        @supports (animation-timeline: view()) {
+            .reveal-scroll-opacity {
+                opacity: 0;
+                animation: revealOpacity 0.8s ease-out forwards;
+                animation-timeline: view();
+                animation-range: entry 10% cover 25%;
+            }
+            .reveal-scroll-item {
+                opacity: 0;
+                animation: revealItem 0.6s ease-out forwards;
+                animation-timeline: view();
+                animation-range: entry 5% cover 15%;
+            }
+            .animate-scroll-border {
+                animation: borderPrimary 0.8s ease-out forwards;
+                animation-timeline: view();
+                animation-range: entry 10% cover 30%;
+            }
+            .animate-scroll-text {
+                animation: textPrimary 0.8s ease-out forwards;
+                animation-timeline: view();
+                animation-range: entry 10% cover 30%;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white font-display antialiased selection:bg-primary/20">
+<div class="relative min-h-screen flex flex-col">
+<nav class="sticky top-0 z-50 w-full border-b border-gray-100 bg-white/90 backdrop-blur-md dark:bg-background-dark/90 dark:border-gray-800 transition-colors duration-300">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-2">
+<div class="size-8 bg-primary text-white rounded-lg flex items-center justify-center font-bold text-lg">M</div>
+<span class="font-bold text-lg tracking-tight hidden sm:block">Mounir Amlal</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-text-muted hover:text-primary transition-colors" href="#about">About me</a>
+<a class="text-sm font-medium text-text-muted hover:text-primary transition-colors" href="#experience">Experience</a>
+<a class="text-sm font-medium text-text-muted hover:text-primary transition-colors" href="#expertise">Expertise</a>
+<a class="text-sm font-medium text-text-muted hover:text-primary transition-colors" href="#contact">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<a class="group flex items-center justify-center h-10 px-5 rounded-lg bg-primary text-white text-sm font-bold shadow-sm transition-none" href="https://calendly.com/mounir-sandstone/30min" target="_blank">
+                        Schedule a conversation
+                        <span class="ml-1 material-symbols-outlined text-sm transition-transform duration-160 ease-out group-hover:translate-x-1">arrow_forward</span>
+</a>
+<div class="flex items-center text-xs font-semibold tracking-wide">
+<a class="text-text-muted hover:text-primary transition-colors px-1" href="/">NL</a>
+<span class="text-gray-300">|</span>
+<a aria-current="page" class="text-primary hover:text-primary transition-colors px-1" href="/en/">EN</a>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<main class="flex-grow">
+<section class="relative pt-12 pb-20 md:pt-24 md:pb-32 overflow-hidden">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="flex flex-col gap-6 order-2 md:order-1">
+<div>
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-text-main dark:text-white tracking-tight leading-[1.1] mb-4 opacity-0 animate-hero-title">
+                                Mounir Amlal
+                            </h1>
+<h2 class="text-xl md:text-2xl text-text-muted dark:text-gray-300 font-medium leading-relaxed opacity-0 animate-hero-subtitle">
+                                Founder &amp; Director sandstone
+                            </h2>
+<p class="mt-4 text-base md:text-lg text-text-muted dark:text-gray-400 max-w-lg leading-relaxed opacity-0 animate-hero-text">
+                                I help organizations grow by bringing together strategy, technology, and execution.
+                            </p>
+</div>
+<div class="flex flex-col gap-3 mt-2 opacity-0 animate-hero-buttons">
+<div class="flex flex-wrap gap-4">
+<a class="group flex items-center justify-center h-12 px-8 rounded-lg bg-primary text-white text-base font-bold shadow-md transition-none" href="https://calendly.com/mounir-sandstone/30min" target="_blank">
+                                    Schedule a conversation
+                                    <span class="ml-2 material-symbols-outlined text-sm transition-transform duration-160 ease-out group-hover:translate-x-1">arrow_forward</span>
+</a>
+<a class="flex items-center justify-center h-12 px-8 rounded-lg bg-white dark:bg-transparent border border-gray-200 dark:border-gray-700 hover:border-primary dark:hover:border-primary text-text-main dark:text-white text-base font-bold transition-all shadow-sm hover:shadow-md" href="#experience">
+                                    View my background
+                                </a>
+</div>
+<p class="text-sm font-medium text-text-muted dark:text-gray-500 pl-1">Space to think things through. No obligation.</p>
+</div>
+</div>
+<div class="order-1 md:order-2 flex justify-center md:justify-end relative">
+<div class="absolute inset-0 bg-primary/5 rounded-[2rem] transform rotate-3 scale-95 z-0 opacity-0 animate-hero-image"></div>
+<div class="relative z-10 w-full max-w-md aspect-[4/5] overflow-hidden rounded-[1.5rem] shadow-2xl bg-gray-100 opacity-0 animate-hero-image">
+<img alt="Professional portrait of Mounir Amlal" class="w-full h-full object-cover" src="assets/img/mounir-amlal.jpg"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-background-subtle dark:bg-gray-900/50" id="about">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 reveal-scroll-opacity">
+<div class="mb-10">
+<h3 class="text-primary font-bold uppercase tracking-wider text-sm mb-2">About me</h3>
+<h2 class="text-3xl font-bold text-text-main dark:text-white">Driven by impact</h2>
+</div>
+<div class="prose prose-lg prose-slate dark:prose-invert max-w-none text-text-muted dark:text-gray-300">
+<p class="mb-6">
+                        Results-oriented and versatile leader with extensive experience in commercial strategy, operational management, and international trade. I thrive in environments where vision and decisiveness come together, and I have a passion for building sustainable growth and scalable solutions.
+                    </p>
+<p>
+                        Whether optimizing business processes, leading multidisciplinary teams, or developing new markets: I combine strategic insight with a hands-on mentality to turn complex challenges into concrete results.
+                    </p>
+</div>
+</div>
+</section>
+<section class="py-24" id="experience">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-end justify-between mb-12 reveal-scroll-opacity">
+<div>
+<h3 class="text-primary font-bold uppercase tracking-wider text-sm mb-2">Career</h3>
+<h2 class="text-3xl font-bold text-text-main dark:text-white">Experience &amp; Results</h2>
+</div>
+</div>
+<div class="relative timeline-line space-y-12">
+<div class="relative z-10 pl-16 group reveal-scroll-item">
+<div class="absolute left-2 top-2 size-9 bg-white dark:bg-background-dark border-2 border-primary rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-sm">star</span>
+</div>
+<div class="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 transition-shadow hover:shadow-md">
+<div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
+<div>
+<h3 class="text-xl font-bold text-text-main dark:text-white">Founder &amp; Director</h3>
+<p class="text-primary font-medium">sandstone</p>
+</div>
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 dark:bg-gray-700 text-text-muted dark:text-gray-300">
+                                    Jan 2026 - Present
+                                </span>
+</div>
+<ul class="space-y-3 text-text-muted dark:text-gray-400 list-disc list-outside ml-4">
+<li>Defining and expanding the strategic course and positioning of sandstone.</li>
+<li>Ultimately responsible for growth, propositions, and client selection at C-level.</li>
+<li>Translating business goals into scalable digital choices in design, technology, and AI.</li>
+</ul>
+</div>
+</div>
+<div class="relative z-10 pl-16 group reveal-scroll-item">
+<div class="absolute left-2 top-2 size-9 bg-white dark:bg-background-dark border-2 border-gray-300 dark:border-gray-600 rounded-full flex items-center justify-center shadow-sm animate-scroll-border">
+<span class="material-symbols-outlined text-gray-500 text-sm animate-scroll-text">work</span>
+</div>
+<div class="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 transition-shadow hover:shadow-md">
+<div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
+<div>
+<h3 class="text-xl font-bold text-text-main dark:text-white">Managing Director</h3>
+<p class="text-primary font-medium">gracious</p>
+</div>
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 dark:bg-gray-700 text-text-muted dark:text-gray-300">
+                                    Jan 2024 - Dec 2025
+                                </span>
+</div>
+<ul class="space-y-3 text-text-muted dark:text-gray-400 list-disc list-outside ml-4">
+<li>Determining and executing the strategic course for further growth and innovation.</li>
+<li>Developing a strong leadership culture and optimizing organizational structures.</li>
+<li>Implementing new commercial strategies to increase market share.</li>
+</ul>
+</div>
+</div>
+<div class="relative z-10 pl-16 group reveal-scroll-item">
+<div class="absolute left-2 top-2 size-9 bg-white dark:bg-background-dark border-2 border-gray-300 dark:border-gray-600 rounded-full flex items-center justify-center shadow-sm animate-scroll-border">
+<span class="material-symbols-outlined text-gray-500 text-sm animate-scroll-text">group</span>
+</div>
+<div class="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 transition-shadow hover:shadow-md">
+<div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
+<div>
+<h3 class="text-xl font-bold text-text-main dark:text-white">COO</h3>
+<p class="text-primary font-medium">gracious</p>
+</div>
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 dark:bg-gray-700 text-text-muted dark:text-gray-300">
+                                    Jun 2018 - Jan 2024
+                                </span>
+</div>
+<ul class="space-y-3 text-text-muted dark:text-gray-400 list-disc list-outside ml-4">
+<li>Responsible for operational excellence and process optimization within the organization.</li>
+<li>Steering on KPIs and financial objectives to maximize profitability.</li>
+<li>Guiding and coaching teams to ensure efficiency and quality.</li>
+</ul>
+</div>
+</div>
+<div class="relative z-10 pl-16 group reveal-scroll-item">
+<div class="absolute left-2 top-2 size-9 bg-white dark:bg-background-dark border-2 border-gray-300 dark:border-gray-600 rounded-full flex items-center justify-center shadow-sm animate-scroll-border">
+<span class="material-symbols-outlined text-gray-500 text-sm animate-scroll-text">trending_up</span>
+</div>
+<div class="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 transition-shadow hover:shadow-md">
+<div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
+<div>
+<h3 class="text-xl font-bold text-text-main dark:text-white">Founder &amp; Director</h3>
+<p class="text-primary font-medium">Goya Trading B.V.</p>
+</div>
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 dark:bg-gray-700 text-text-muted dark:text-gray-300">
+                                    Jun 2020 - Dec 2022
+                                </span>
+</div>
+<ul class="space-y-3 text-text-muted dark:text-gray-400 list-disc list-outside ml-4">
+<li>Setting up and leading international trading activities and bulk purchasing.</li>
+<li>Developing scalable solutions for logistical and supply chain challenges.</li>
+<li>Building a reliable partner network across different continents.</li>
+</ul>
+</div>
+</div>
+<div class="relative z-10 pl-16 group reveal-scroll-item">
+<div class="absolute left-2 top-2 size-9 bg-white dark:bg-background-dark border-2 border-gray-300 dark:border-gray-600 rounded-full flex items-center justify-center shadow-sm animate-scroll-border">
+<span class="material-symbols-outlined text-gray-500 text-sm animate-scroll-text">business_center</span>
+</div>
+<div class="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 transition-shadow hover:shadow-md">
+<div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
+<div>
+<h3 class="text-xl font-bold text-text-main dark:text-white">Key Account Manager</h3>
+<p class="text-primary font-medium">Samsung Electronics Benelux</p>
+</div>
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 dark:bg-gray-700 text-text-muted dark:text-gray-300">
+                                    May 2017 - Jun 2018
+                                </span>
+</div>
+</div>
+</div>
+<div class="relative z-10 pl-16 group reveal-scroll-item">
+<div class="absolute left-2 top-2 size-9 bg-white dark:bg-background-dark border-2 border-gray-300 dark:border-gray-600 rounded-full flex items-center justify-center shadow-sm animate-scroll-border">
+<span class="material-symbols-outlined text-gray-500 text-sm animate-scroll-text">history</span>
+</div>
+<div class="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 transition-shadow hover:shadow-md">
+<h3 class="text-lg font-bold text-text-main dark:text-white mb-2">Previous experiences</h3>
+<div class="text-text-muted dark:text-gray-400 text-sm grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+<div>
+<p class="font-semibold text-text-main dark:text-white">LG Electronics</p>
+<p>Senior Account Manager</p>
+</div>
+<div>
+<p class="font-semibold text-text-main dark:text-white">Case Logic</p>
+<p>Account Manager</p>
+</div>
+<div>
+<p class="font-semibold text-text-main dark:text-white">Media Markt</p>
+<p>Floormanager</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-background-subtle dark:bg-gray-900/50" id="expertise">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="mb-12 text-center md:text-left reveal-scroll-opacity">
+<h3 class="text-primary font-bold uppercase tracking-wider text-sm mb-2">Focus &amp; Skills</h3>
+<h2 class="text-3xl md:text-4xl font-bold text-text-main dark:text-white">Expertise</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col h-full hover:shadow-lg hover:-translate-y-[2px] hover:translate-y-[-4px] transition-all duration-200 ease-out">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 bg-blue-50 dark:bg-blue-900/30 rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">strategy</span>
+</div>
+<h3 class="text-xl font-bold text-text-main dark:text-white leading-tight">Executive choices &amp; direction</h3>
+</div>
+<div class="space-y-4">
+<div class="flex flex-col gap-2">
+<span class="text-sm font-semibold text-text-main dark:text-gray-200">Competencies</span>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-gray-50 dark:bg-gray-700/50 text-text-muted dark:text-gray-300 text-sm font-medium rounded-lg">Setting direction when everything seems a priority</span>
+<span class="px-3 py-1.5 bg-gray-50 dark:bg-gray-700/50 text-text-muted dark:text-gray-300 text-sm font-medium rounded-lg">Enforcing decisions amidst conflicting interests</span>
+<span class="px-3 py-1.5 bg-gray-50 dark:bg-gray-700/50 text-text-muted dark:text-gray-300 text-sm font-medium rounded-lg">Creating focus that remains executable</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col h-full hover:shadow-lg hover:-translate-y-[2px] hover:translate-y-[-4px] transition-all duration-200 ease-out">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 bg-blue-50 dark:bg-blue-900/30 rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">trending_up</span>
+</div>
+<h3 class="text-xl font-bold text-text-main dark:text-white leading-tight">Sustainable growth</h3>
+</div>
+<div class="space-y-4">
+<div class="flex flex-col gap-2">
+<span class="text-sm font-semibold text-text-main dark:text-gray-200">Competencies</span>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-gray-50 dark:bg-gray-700/50 text-text-muted dark:text-gray-300 text-sm font-medium rounded-lg">Designing scale without margin loss</span>
+<span class="px-3 py-1.5 bg-gray-50 dark:bg-gray-700/50 text-text-muted dark:text-gray-300 text-sm font-medium rounded-lg">Testing growth against organization and capacity</span>
+<span class="px-3 py-1.5 bg-gray-50 dark:bg-gray-700/50 text-text-muted dark:text-gray-300 text-sm font-medium rounded-lg">Improving performance without extra complexity</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col h-full hover:shadow-lg hover:-translate-y-[2px] hover:translate-y-[-4px] transition-all duration-200 ease-out">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 bg-blue-50 dark:bg-blue-900/30 rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">rocket_launch</span>
+</div>
+<h3 class="text-xl font-bold text-text-main dark:text-white leading-tight">Technology as a consequence</h3>
+</div>
+<div class="space-y-4">
+<div class="flex flex-col gap-2">
+<span class="text-sm font-semibold text-text-main dark:text-gray-200">Competencies</span>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-gray-50 dark:bg-gray-700/50 text-text-muted dark:text-gray-300 text-sm font-medium rounded-lg">Linking digital choices to business goals</span>
+<span class="px-3 py-1.5 bg-gray-50 dark:bg-gray-700/50 text-text-muted dark:text-gray-300 text-sm font-medium rounded-lg">Simplifying architecture for speed and scale</span>
+<span class="px-3 py-1.5 bg-gray-50 dark:bg-gray-700/50 text-text-muted dark:text-gray-300 text-sm font-medium rounded-lg">Deploying AI where it strengthens decision-making</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 text-center reveal-scroll-opacity">
+<a class="inline-flex items-center gap-2 text-text-muted dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="https://calendly.com/mounir-sandstone/30min" target="_blank">
+                        Recognizable? Let's discuss this.
+                    </a>
+</div>
+</div>
+</section>
+<section class="py-24 bg-white dark:bg-background-dark reveal-scroll-opacity">
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="relative bg-text-main dark:bg-gray-900 rounded-3xl p-10 md:p-16 overflow-hidden text-center shadow-xl">
+<div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-400 via-primary to-blue-700"></div>
+<div class="absolute -top-24 -left-24 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-24 -right-24 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+<span class="material-symbols-outlined text-5xl text-primary/40 mb-8 block mx-auto">format_quote</span>
+<h2 class="text-2xl md:text-3xl lg:text-4xl font-serif italic text-white leading-relaxed mb-10 max-w-4xl mx-auto">
+                        "Governance is not about more plans, but about better choices. My role is to enforce focus and ensure decisions are actually executed."
+                    </h2>
+<div class="flex items-center justify-center gap-4">
+<div class="size-12 bg-gray-600 rounded-full overflow-hidden border-2 border-primary/50">
+<img alt="Small avatar of Mounir Amlal" class="w-full h-full object-cover" src="assets/img/mounir-amlal.jpg"/>
+</div>
+<div class="text-left">
+<p class="text-white font-bold text-base tracking-wide">Mounir Amlal</p>
+<p class="text-primary/80 text-xs uppercase font-bold tracking-wider">Personal Vision</p>
+</div>
+</div>
+<div class="mt-10 pt-8 border-t border-white/10 flex justify-center">
+<a class="text-white/80 hover:text-white text-sm font-medium transition-colors border-b border-white/20 hover:border-white pb-0.5" href="https://calendly.com/mounir-sandstone/30min" target="_blank">
+                            Open for a conversation?
+                        </a>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-white dark:bg-background-dark border-t border-gray-100 dark:border-gray-800" id="contact">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+<h2 class="text-3xl md:text-4xl font-bold text-text-main dark:text-white mb-4">Time to spar?</h2>
+<p class="text-text-muted dark:text-gray-400 mb-10 text-lg">Let's discuss where you are stuck and what helps to move forward.</p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+<a class="group flex items-center justify-center h-14 px-8 rounded-lg bg-primary text-white text-lg font-bold shadow-lg transition-none w-full sm:w-auto" href="https://calendly.com/mounir-sandstone/30min" target="_blank">
+                        Schedule a conversation
+                        <span class="ml-2 material-symbols-outlined text-sm transition-transform duration-160 ease-out group-hover:translate-x-1">arrow_forward</span>
+</a>
+<a class="flex items-center justify-center h-14 px-8 rounded-lg bg-white dark:bg-gray-800 text-text-main dark:text-white border-2 border-gray-200 dark:border-gray-700 hover:border-primary dark:hover:border-primary text-lg font-bold transition-all w-full sm:w-auto" href="https://linkedin.com" target="_blank">
+                        Connect via LinkedIn
+                    </a>
+</div>
+<p class="text-sm text-text-muted dark:text-gray-500">
+                    Or <a class="hover:text-primary transition-colors underline decoration-dotted" href="tel:+31615395796">call</a> or <a class="hover:text-primary transition-colors underline decoration-dotted" href="https://wa.me/31615395796">WhatsApp</a> via +31 6 15395796
+                </p>
+<div class="mt-16 pt-8 border-t border-gray-100 dark:border-gray-800 flex justify-center">
+<p class="text-xs text-gray-400">© 2026 Mounir Amlal. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</main>
+</div>
+
+</body></html>
