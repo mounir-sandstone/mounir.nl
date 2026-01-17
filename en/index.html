@@ -6,7 +6,7 @@
 <meta name="description" content="Strategic sparring partner for complex decisions in growth, technology, and execution. Focused on clarity and focus.">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon.png">
 <link rel="apple-touch-icon" href="/assets/img/favicon.png">
-<link href="https://mounir.nl/en/" rel="canonical"/>
+<link href="https://mounir.nl/" rel="canonical"/>
 <link href="https://mounir.nl/" hreflang="nl" rel="alternate"/>
 <link href="https://mounir.nl/en/" hreflang="en" rel="alternate"/>
 <link href="https://mounir.nl/" hreflang="x-default" rel="alternate"/>
@@ -22,6 +22,7 @@
                 extend: {
                     colors: {
                         "primary": "#1152d4",
+                        "primary-hover": "#0A358A", 
                         "background-light": "#ffffff",
                         "background-subtle": "#f8f9fc",
                         "background-dark": "#101622",
@@ -62,6 +63,10 @@
                     transitionDuration: {
                         '120': '120ms',
                         '160': '160ms',
+                        '200': '200ms',
+                    },
+                    transitionTimingFunction: {
+                        'DEFAULT': 'ease-out',
                     }
                 },
             },
@@ -103,6 +108,40 @@
         .reveal-scroll-item {
             opacity: 1;
         }
+        #mobile-menu-overlay {
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+            background-color: #ffffff;
+            z-index: 60;
+        }
+        #mobile-menu-content {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .menu-open #mobile-menu-overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+        .menu-open #mobile-menu-content {
+            transform: translateY(0);
+        }
+        .menu-closed #mobile-menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .menu-closed #mobile-menu-content {
+            transform: translateY(-100%);
+        }
+        .hamburger-icon span {
+            transition: all 0.3s ease;
+        }
+        .menu-open .hamburger-icon span:nth-child(1) {
+            transform: translateY(6px) rotate(45deg);
+            width: 24px;
+        }
+        .menu-open .hamburger-icon span:nth-child(2) {
+            transform: translateY(-6px) rotate(-45deg);
+            width: 24px;
+        }
         @supports (animation-timeline: view()) {
             .reveal-scroll-opacity {
                 opacity: 0;
@@ -129,14 +168,14 @@
         }
     </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white font-display antialiased selection:bg-primary/20">
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white font-display antialiased selection:bg-primary/20 menu-closed">
 <div class="relative min-h-screen flex flex-col">
 <nav class="sticky top-0 z-50 w-full border-b border-gray-100 bg-white/90 backdrop-blur-md dark:bg-background-dark/90 dark:border-gray-800 transition-colors duration-300">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex items-center justify-between h-16">
-<div class="flex items-center gap-2">
+<div class="flex items-center justify-between h-16 sm:h-20">
+<div class="flex items-center gap-2 z-[70] relative">
 <div class="size-8 bg-primary text-white rounded-lg flex items-center justify-center font-bold text-lg">M</div>
-<span class="font-bold text-lg tracking-tight hidden sm:block">Mounir Amlal</span>
+<span class="font-bold text-lg tracking-tight block [.menu-open_&amp;]:text-text-main">Mounir Amlal</span>
 </div>
 <div class="hidden md:flex items-center gap-8">
 <a class="text-sm font-medium text-text-muted hover:text-primary transition-colors" href="#about">About me</a>
@@ -144,15 +183,47 @@
 <a class="text-sm font-medium text-text-muted hover:text-primary transition-colors" href="#expertise">Expertise</a>
 <a class="text-sm font-medium text-text-muted hover:text-primary transition-colors" href="#contact">Contact</a>
 </div>
-<div class="flex items-center gap-4">
-<a class="group flex items-center justify-center h-10 px-5 rounded-lg bg-primary text-white text-sm font-bold shadow-sm hover:bg-[#0b3a9e] hover:shadow-md transition-all duration-200 ease-out" href="https://calendly.com/mounir-sandstone/30min" target="_blank">
-                        Schedule a meeting
-                        <span class="ml-1 material-symbols-outlined text-sm transition-transform duration-160 ease-out group-hover:translate-x-1">arrow_forward</span>
+<div class="hidden md:flex items-center gap-4">
+<a class="group flex items-center justify-center h-10 px-5 rounded-lg bg-primary text-white text-sm font-bold shadow-sm hover:bg-primary-hover hover:shadow-md transition-all duration-200 ease-out" href="https://calendly.com/mounir-sandstone/30min" target="_blank">
+                        Schedule a conversation
+                        <span class="ml-1 material-symbols-outlined text-sm transition-transform duration-200 ease-out group-hover:translate-x-1">arrow_forward</span>
 </a>
 <div class="flex items-center text-xs font-semibold tracking-wide">
 <a class="text-text-muted hover:text-primary transition-colors px-1" href="/">NL</a>
 <span class="text-gray-300">|</span>
-<a aria-current="page" class="text-primary hover:text-primary transition-colors px-1" href="/en/">EN</a>
+<a aria-current="page" class="text-primary px-1" href="/en/">EN</a>
+</div>
+</div>
+<div class="flex items-center gap-4 md:hidden z-[70]">
+<div class="flex items-center text-xs font-semibold tracking-wide mr-2">
+<a class="text-text-muted hover:text-primary transition-colors px-1" href="/">NL</a>
+<span class="text-gray-300">|</span>
+<a aria-current="page" class="text-primary px-1" href="/en/">EN</a>
+</div>
+<button aria-label="Toggle menu" class="hamburger-icon flex flex-col items-end justify-center gap-[6px] w-8 h-8 focus:outline-none" onclick="document.body.classList.toggle('menu-open'); document.body.classList.toggle('menu-closed');">
+<span class="block h-[2px] w-6 bg-text-main dark:bg-white [.menu-open_&amp;]:bg-text-main rounded-full"></span>
+<span class="block h-[2px] w-4 bg-text-main dark:bg-white [.menu-open_&amp;]:bg-text-main rounded-full"></span>
+</button>
+</div>
+</div>
+</div>
+<div class="fixed inset-0 z-[60] bg-white md:hidden flex flex-col pt-20 px-6 pb-8 h-screen w-screen" id="mobile-menu-overlay">
+<div class="flex-grow flex flex-col justify-start items-start space-y-6 pt-0" id="mobile-menu-content">
+<nav class="flex flex-col space-y-5 w-full">
+<a class="text-4xl font-bold text-text-main hover:text-primary transition-colors tracking-tight" href="#about" onclick="document.body.classList.remove('menu-open'); document.body.classList.add('menu-closed');">About me</a>
+<a class="text-4xl font-bold text-text-main hover:text-primary transition-colors tracking-tight" href="#experience" onclick="document.body.classList.remove('menu-open'); document.body.classList.add('menu-closed');">Experience</a>
+<a class="text-4xl font-bold text-text-main hover:text-primary transition-colors tracking-tight" href="#expertise" onclick="document.body.classList.remove('menu-open'); document.body.classList.add('menu-closed');">Expertise</a>
+<a class="text-4xl font-bold text-text-main hover:text-primary transition-colors tracking-tight" href="#contact" onclick="document.body.classList.remove('menu-open'); document.body.classList.add('menu-closed');">Contact</a>
+</nav>
+<div class="mt-auto w-full pt-6 border-t border-gray-100 dark:border-gray-800">
+<p class="text-sm text-text-muted mb-4">Let's discuss where you're stuck.</p>
+<a class="group flex items-center justify-center h-14 w-full rounded-xl bg-primary text-white text-lg font-bold shadow-lg hover:bg-primary-hover hover:shadow-xl transition-all duration-200 ease-out" href="https://calendly.com/mounir-sandstone/30min" target="_blank">
+                Schedule a conversation
+                <span class="ml-2 material-symbols-outlined text-sm transition-transform duration-200 ease-out group-hover:translate-x-1">arrow_forward</span>
+</a>
+<div class="mt-6 flex gap-8">
+<a class="text-text-muted hover:text-primary transition-colors font-medium text-lg" href="https://linkedin.com" target="_blank">LinkedIn</a>
+<a class="text-text-muted hover:text-primary transition-colors font-medium text-lg" href="mailto:mounir@sandstone.nl">Email</a>
 </div>
 </div>
 </div>
@@ -171,20 +242,20 @@
                                 Founder &amp; Director sandstone
                             </h2>
 <p class="mt-4 text-base md:text-lg text-text-muted dark:text-gray-400 max-w-lg leading-relaxed opacity-0 animate-hero-text">
-                                I help organizations grow by bringing together strategy, technology, and execution.
+                                I help organizations grow by bringing strategy, technology, and execution together.
                             </p>
 </div>
 <div class="flex flex-col gap-3 mt-2 opacity-0 animate-hero-buttons">
 <div class="flex flex-wrap gap-4">
-<a class="group flex items-center justify-center h-12 px-8 rounded-lg bg-primary text-white text-base font-bold shadow-md hover:bg-[#0b3a9e] hover:shadow-lg transition-all duration-200 ease-out" href="https://calendly.com/mounir-sandstone/30min" target="_blank">
-                                    Schedule a meeting
-                                    <span class="ml-2 material-symbols-outlined text-sm transition-transform duration-160 ease-out group-hover:translate-x-1">arrow_forward</span>
+<a class="group flex items-center justify-center h-12 px-8 rounded-lg bg-primary text-white text-base font-bold shadow-md hover:bg-primary-hover hover:shadow-lg transition-all duration-200 ease-out" href="https://calendly.com/mounir-sandstone/30min" target="_blank">
+                                    Schedule a conversation
+                                    <span class="ml-2 material-symbols-outlined text-sm transition-transform duration-200 ease-out group-hover:translate-x-1">arrow_forward</span>
 </a>
-<a class="flex items-center justify-center h-12 px-8 rounded-lg bg-white dark:bg-transparent border border-gray-200 dark:border-gray-700 hover:border-primary dark:hover:border-primary text-text-main dark:text-white text-base font-bold transition-all shadow-sm hover:shadow-md" href="#experience">
+<a class="flex items-center justify-center h-12 px-8 rounded-lg bg-white dark:bg-transparent border border-gray-200 dark:border-gray-700 hover:border-primary dark:hover:border-primary text-text-main dark:text-white text-base font-bold transition-all shadow-sm hover:shadow-md hover:bg-gray-50 dark:hover:bg-gray-800/50" href="#experience">
                                     View my background
                                 </a>
 </div>
-<p class="text-sm font-medium text-text-muted dark:text-gray-500 pl-1">Space to think things through. No obligation.</p>
+<p class="text-sm font-medium text-text-muted dark:text-gray-500 pl-1">Space to reflect. No obligation.</p>
 </div>
 </div>
 <div class="order-1 md:order-2 flex justify-center md:justify-end relative">
@@ -204,10 +275,10 @@
 </div>
 <div class="prose prose-lg prose-slate dark:prose-invert max-w-none text-text-muted dark:text-gray-300">
 <p class="mb-6">
-                        Results-oriented and versatile leader with extensive experience in commercial strategy, operational management, and international trade. I thrive in environments where vision and decisiveness come together, and I have a passion for building sustainable growth and scalable solutions.
+                        Result-oriented and versatile leader with extensive experience in commercial strategy, operational management, and international trade. I thrive in environments where vision and decisiveness meet and have a passion for building sustainable growth and scalable solutions.
                     </p>
 <p>
-                        Whether optimizing business processes, leading multidisciplinary teams, or developing new markets: I combine strategic insight with a hands-on mentality to turn complex challenges into concrete results.
+                        Whether it concerns optimizing business processes, leading multidisciplinary teams, or developing new markets: I combine strategic insight with a hands-on mentality to turn complex challenges into concrete results.
                     </p>
 </div>
 </div>
@@ -237,8 +308,8 @@
 </div>
 <ul class="space-y-3 text-text-muted dark:text-gray-400 list-disc list-outside ml-4">
 <li>Defining and expanding the strategic course and positioning of sandstone.</li>
-<li>Ultimately responsible for growth, propositions, and client selection at C-level.</li>
-<li>Translating business goals into scalable digital choices in design, technology, and AI.</li>
+<li>Final responsibility for growth, propositions, and client selection at C-level.</li>
+<li>Translating business objectives into scalable digital choices in design, technology, and AI.</li>
 </ul>
 </div>
 </div>
@@ -338,7 +409,7 @@
 </div>
 <div>
 <p class="font-semibold text-text-main dark:text-white">Media Markt</p>
-<p>Floormanager</p>
+<p>Floor Manager</p>
 </div>
 </div>
 </div>
@@ -358,15 +429,15 @@
 <div class="w-12 h-12 bg-blue-50 dark:bg-blue-900/30 rounded-xl flex items-center justify-center text-primary">
 <span class="material-symbols-outlined text-2xl">strategy</span>
 </div>
-<h3 class="text-xl font-bold text-text-main dark:text-white leading-tight">Executive choices &amp; direction</h3>
+<h3 class="text-xl font-bold text-text-main dark:text-white leading-tight">Governance &amp; Direction</h3>
 </div>
 <div class="space-y-4">
 <div class="flex flex-col gap-2">
 <span class="text-sm font-semibold text-text-main dark:text-gray-200">Competencies</span>
 <div class="flex flex-wrap gap-2">
-<span class="px-3 py-1.5 bg-gray-50 dark:bg-gray-700/50 text-text-muted dark:text-gray-300 text-sm font-medium rounded-lg">Setting direction when everything seems a priority</span>
+<span class="px-3 py-1.5 bg-gray-50 dark:bg-gray-700/50 text-text-muted dark:text-gray-300 text-sm font-medium rounded-lg">Providing direction when everything seems a priority</span>
 <span class="px-3 py-1.5 bg-gray-50 dark:bg-gray-700/50 text-text-muted dark:text-gray-300 text-sm font-medium rounded-lg">Enforcing decisions amidst conflicting interests</span>
-<span class="px-3 py-1.5 bg-gray-50 dark:bg-gray-700/50 text-text-muted dark:text-gray-300 text-sm font-medium rounded-lg">Creating focus that remains executable</span>
+<span class="px-3 py-1.5 bg-gray-50 dark:bg-gray-700/50 text-text-muted dark:text-gray-300 text-sm font-medium rounded-lg">Creating focus that remains actionable</span>
 </div>
 </div>
 </div>
@@ -376,7 +447,7 @@
 <div class="w-12 h-12 bg-blue-50 dark:bg-blue-900/30 rounded-xl flex items-center justify-center text-primary">
 <span class="material-symbols-outlined text-2xl">trending_up</span>
 </div>
-<h3 class="text-xl font-bold text-text-main dark:text-white leading-tight">Sustainable growth</h3>
+<h3 class="text-xl font-bold text-text-main dark:text-white leading-tight">Growth that Lasts</h3>
 </div>
 <div class="space-y-4">
 <div class="flex flex-col gap-2">
@@ -394,7 +465,7 @@
 <div class="w-12 h-12 bg-blue-50 dark:bg-blue-900/30 rounded-xl flex items-center justify-center text-primary">
 <span class="material-symbols-outlined text-2xl">rocket_launch</span>
 </div>
-<h3 class="text-xl font-bold text-text-main dark:text-white leading-tight">Technology as a consequence</h3>
+<h3 class="text-xl font-bold text-text-main dark:text-white leading-tight">Technology as a Result</h3>
 </div>
 <div class="space-y-4">
 <div class="flex flex-col gap-2">
@@ -410,7 +481,7 @@
 </div>
 <div class="mt-8 text-center reveal-scroll-opacity">
 <a class="inline-flex items-center gap-2 text-text-muted dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="https://calendly.com/mounir-sandstone/30min" target="_blank">
-                        Recognizable? Let's discuss this.
+                        Recognizable? Let’s discuss this.
                     </a>
 </div>
 </div>
@@ -423,7 +494,7 @@
 <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
 <span class="material-symbols-outlined text-5xl text-primary/40 mb-8 block mx-auto">format_quote</span>
 <h2 class="text-2xl md:text-3xl lg:text-4xl font-serif italic text-white leading-relaxed mb-10 max-w-4xl mx-auto">
-                        "Governance is not about more plans, but about better choices. My role is to enforce focus and ensure decisions are actually executed."
+                        "Governance is not about more plans, but about better choices. My role is to enforce focus and ensure that decisions are actually executed."
                     </h2>
 <div class="flex items-center justify-center gap-4">
 <div class="size-12 bg-gray-600 rounded-full overflow-hidden border-2 border-primary/50">
@@ -445,13 +516,13 @@
 <footer class="bg-white dark:bg-background-dark border-t border-gray-100 dark:border-gray-800" id="contact">
 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
 <h2 class="text-3xl md:text-4xl font-bold text-text-main dark:text-white mb-4">Time to spar?</h2>
-<p class="text-text-muted dark:text-gray-400 mb-10 text-lg">Let’s get clear on where you’re stuck and what helps you move forward.</p>
+<p class="text-text-muted dark:text-gray-400 mb-10 text-lg">Let’s discuss where you’re stuck and what helps you move forward.</p>
 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-<a class="group flex items-center justify-center h-14 px-8 rounded-lg bg-primary text-white text-lg font-bold shadow-lg hover:bg-[#0b3a9e] hover:shadow-xl transition-all duration-200 ease-out w-full sm:w-auto" href="https://calendly.com/mounir-sandstone/30min" target="_blank">
-                       Schedule a meeting
-                        <span class="ml-2 material-symbols-outlined text-sm transition-transform duration-160 ease-out group-hover:translate-x-1">arrow_forward</span>
+<a class="group flex items-center justify-center h-14 px-8 rounded-lg bg-primary text-white text-lg font-bold shadow-lg hover:bg-primary-hover hover:shadow-xl transition-all duration-200 ease-out w-full sm:w-auto" href="https://calendly.com/mounir-sandstone/30min" target="_blank">
+                        Schedule a conversation
+                        <span class="ml-2 material-symbols-outlined text-sm transition-transform duration-200 ease-out group-hover:translate-x-1">arrow_forward</span>
 </a>
-<a class="flex items-center justify-center h-14 px-8 rounded-lg bg-white dark:bg-gray-800 text-text-main dark:text-white border-2 border-gray-200 dark:border-gray-700 hover:border-primary dark:hover:border-primary text-lg font-bold transition-all w-full sm:w-auto" href="https://www.linkedin.com/in/mounir-amlal-a3a92a19/" target="_blank">
+<a class="flex items-center justify-center h-14 px-8 rounded-lg bg-white dark:bg-gray-800 text-text-main dark:text-white border-2 border-gray-200 dark:border-gray-700 hover:border-primary dark:hover:border-primary text-lg font-bold transition-all w-full sm:w-auto" href="https://linkedin.com" target="_blank">
                         Connect via LinkedIn
                     </a>
 </div>
@@ -465,5 +536,4 @@
 </footer>
 </main>
 </div>
-
 </body></html>
